@@ -18,7 +18,7 @@ export class WeatherService {
 
   getWeatherInfo(data: String) {
     //console.log(data);
-    return this.Http.get(`http://api.openweathermap.org/data/2.5/weather?q=` + data +
+    return this.Http.get(`https://api.openweathermap.org/data/2.5/weather?q=` + data +
       `&APPID=a4c95c649a6e47e17b1a64dcf04456bc&units=metric`).pipe(
 
         catchError(this.handleError));;
