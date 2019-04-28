@@ -12,8 +12,7 @@ import { catchError } from 'rxjs/operators/';
   providedIn: 'root'
 })
 export class WeatherService {
-  URl = 'api.openweathermap.org/data/2.5/weather?q=';
-  appid = '&APPID=a4c95c649a6e47e17b1a64dcf04456bc';
+
   constructor(private Http: HttpClient) { }
 
   getWeatherInfo(data: String) {
@@ -27,10 +26,9 @@ export class WeatherService {
   handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
-      // client-side error
       errorMessage = `Error: ${error.error.message}`;
     } else {
-      // server-side error
+ 
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     // window.alert(errorMessage);
