@@ -3,9 +3,9 @@
   <div class="row">
     <div class="col-lg-4" *ngFor="let x of arr;  let i = index">
 
-      <div style=" background-image: url('https://tribwgntv.files.wordpress.com/2019/04/rosehoran.png?w=770')">
+      
         <div class="panel panel-default" style="height: 250px;" (click)="showGrids(i)">
-
+          <div [ngStyle]="{ 'background-image': 'url('+imgurl[i]+')'}">
           <div class="body-panel" *ngIf="showGrid[i]">
             <form [formGroup]="angForm2" style="padding: 10%; padding-top: 2%" novalidate>
               <div *ngIf="showLebel[i]">
@@ -22,7 +22,7 @@
 
               <div *ngIf="show[i]">
                 <br>
-                <button (click)="editInfo(i)" class="btn btn-primary">Edit</button><br>
+                <button (click)="editInfo(i)" class="btn btn-primary">Edit   </button><br>
                 <br>
                 <p *ngIf="err[i]">Error! Please enter the valid city</p>
                 <div *ngIf="!err[i]">
