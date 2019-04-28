@@ -26,3 +26,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 # WeatherApp
+
+Details information:-
+
+Open the link : https://niru696.github.io/WeatherApp/
+
+Click on any grid of panel.
+
+Now enter the city name in the input field and click on 'Submit' button.
+
+The information related to the weather of that particular city appears in the grid.
+
+To edit the city, click on 'Edit' button.
+
+NOTE: If the city name does not match with any city, then you will get an error message : 'Error! Please enter the valid city'
