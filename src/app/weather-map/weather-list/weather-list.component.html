@@ -1,0 +1,44 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let x of arr;  let i = index">
+
+      <div style=" background-image: url('https://tribwgntv.files.wordpress.com/2019/04/rosehoran.png?w=770')">
+        <div class="panel panel-default" style="height: 250px;" (click)="showGrids(i)">
+
+          <div class="body-panel" *ngIf="showGrid[i]">
+            <form [formGroup]="angForm2" style="padding: 10%; padding-top: 2%" novalidate>
+              <div *ngIf="showLebel[i]">
+                <div class="form-group">
+                  <label class="col-form-label col-form-label-md">Enter City Name</label>
+                  <input type="text" class="form-control form-control-sm" name="city" formControlName="city" #city
+                    placeholder="" required>
+
+                </div>
+                <div class="form-group">
+                  <button (click)="getInfo(i)" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+
+              <div *ngIf="show[i]">
+                <br>
+                <button (click)="editInfo(i)" class="btn btn-primary">Edit</button><br>
+                <br>
+                <p *ngIf="err[i]">Error! Please enter the valid city</p>
+                <div *ngIf="!err[i]">
+                  <h2>City: &nbsp;<span>{{weatherData[i].name}}</span></h2> <br>
+                  <h3>Temperature: &nbsp;<span>{{weatherData[i].main.temp +"&deg;C"}}</span></h3>
+                  <h3>Minimum Temp: <span>{{weatherData[i].main.temp_min + "&deg;C"}}</span></h3>
+                  <h3> Maximum Temp: &nbsp;<span>{{weatherData[i].main.temp_max + "&deg;C"}}</span></h3>
+                  <h3> sky: &nbsp;<span>{{weatherData[i].weather[0].main}}</span></h3>
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
